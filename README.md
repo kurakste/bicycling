@@ -1,5 +1,5 @@
 # bicycling
-##My self development in java script.
+## My self development in java script.
 
-1. morse - Morsecode coder & decoder. 
+* morse - Morsecode coder & decoder. 
 
