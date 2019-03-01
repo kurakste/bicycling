@@ -4,14 +4,14 @@
   "description": "Just learning different algoritms.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "keywords": [
     "js"
   ],
   "author": "kurakste",
   "license": "ISC",
-  "dependencies": {
-    "mocha": "^6.0.2"
+  "devDependencies": {
+    "jest": "^24.1.0"
   }
 }
