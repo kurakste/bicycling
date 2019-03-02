@@ -1,8 +1,12 @@
 const matrix = require('./matrix');
 const transpon = require('../../helpers/transpon');
-// This function gets string with morsecode divided one whitespace between
-// letters & three whitespace between words. As a result function give us
-// decoded string.
+
+/** 
+* This function gets string with morsecode divided 
+* one whitespace between letters & three whitespace 
+* between words. As a result function give us decoded
+* string.
+*/
 decoder = (input) => {
     
     const _matrix = transpon(matrix);

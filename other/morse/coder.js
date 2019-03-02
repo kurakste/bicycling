@@ -1,9 +1,12 @@
 const matrix = require('./matrix');
 
-// This function gets string with letters as argument & return back
-// string with morsecode divided one whitespace between
-// letters & three whitespace between words. 
-coder = (input) => {
+/**
+ * This function gets string with letters as argument 
+ * & return back string with morsecode divided one 
+ * whitespace between letters & three whitespace between 
+ * words. 
+ */ 
+ coder = (input) => {
     //clear & prepear input
     const inarr = input
         .trim()

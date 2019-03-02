@@ -18,11 +18,13 @@ const fizzbuzz = (size) => {
     return iter([], n)
 }
 
-/* Here is a perfomance issue with recursive call.
-   the limit of this approach is about 7 000 iteration.
-   Then it will crash. Classic one keep over 1 000 000 
-   iteterations.
-*/
+/**
+ * 
+ * Here is a perfomance issue with recursive call.
+ * the limit of this approach is about 7 000 
+ * iteration. Then it will crash. Classic one keep 
+ *  over 1 000 000 iteterations.
+ */
 let t = performance.now();
 console.log(fizzbuzz(7050));
 t = performance.now() - t;
