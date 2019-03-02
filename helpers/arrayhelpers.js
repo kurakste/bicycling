@@ -1,11 +1,15 @@
-// It gets min value from array
+/*
+    It gets min value from array
+*/
 exports.min = (arr) => {
     return arr.reduce( 
         (acc, el) => (el < acc) ? el : acc
         , Infinity ); 
 }
 
-// It gets max value from array
+/* 
+ *  It gets max value from array
+ */
 exports.max = (arr) => {
     return arr.reduce( (acc, el) => {
         return (el > acc) ? el : acc;
@@ -20,6 +24,19 @@ exports.sort = (arr) => {
         if (a === b) return 0;
 
     });
-    console.log(out);
+    return out;
+}
+
+exports.flat = (arr) => {
+    let out = arr.reduce( (acc,el) => {
+        if (Array.isArray(el)) {
+            el.forEach(e => {
+                acc.push(e);
+            });
+        } else {
+            acc.push(el);
+        }
+        return acc;
+    }, []);
     return out;
 }
