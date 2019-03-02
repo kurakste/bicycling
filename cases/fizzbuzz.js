@@ -23,7 +23,10 @@ const fizzbuzz = (size) => {
  * Here is a perfomance issue with recursive call.
  * the limit of this approach is about 7 000 
  * iteration. Then it will crash. Classic one keep 
- *  over 1 000 000 iteterations.
+ * over 1 000 000 iteterations.
+ * Memory consuption recurcive for 7 000 iterations 
+ * is equal that clasic algoritm consume 
+ * for 1 000 000
  */
 let t = performance.now();
 console.log(fizzbuzz(7050));
