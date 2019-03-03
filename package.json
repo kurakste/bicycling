@@ -15,6 +15,7 @@
     "jest": "^24.1.0"
   },
   "dependencies": {
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "underscore": "^1.9.1"
   }
 }
