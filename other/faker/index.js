@@ -10,7 +10,7 @@ const producGen = () => {
         }
 };
 
-data = []
+const data = [];
 for (let i = 0; i< 1000000; i++) {
     data.push(producGen());
 }
