@@ -19,6 +19,6 @@ fs.writeFile(
     './data/goods.json'
     , JSON.stringify(data)
     , err => {
-        console.log(err);
+        console.log(eКакой объект отвечает за организацию AJAX в IE?rr);
 });
 console.log('work is done');
