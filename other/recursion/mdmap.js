@@ -1,6 +1,6 @@
 const input = [
-    1, [ 2, [ 3, 1]] , 3, [ 2, 2, [ 3, 4], 3], 3,
-    7, 4, [ 3, 5]
+  1, [ 2, [ 3, 1]] , 3, [ 2, 2, [ 3, 4], 3], 3,
+  7, 4, [ 3, 5]
 ];
 
 /*
@@ -12,11 +12,11 @@ const input = [
 */
 
 const mdmap = (arg, cb) => {
-    if (!Array.isArray(arg)) return cb(arg);
-    const out = [];
-    arg.forEach(el => 
-        out.push(mdmap(el, cb)));
-    return out;
+  if (!Array.isArray(arg)) return cb(arg);
+  const out = [];
+  arg.forEach(el => 
+    out.push(mdmap(el, cb)));
+  return out;
 };
 
 // const mdmap = function(cb) {
@@ -27,5 +27,5 @@ Array.prototype.mdmap
     = function (cb) { return mdmap(this, cb) };
 
 console.log(
-    input.mdmap(el=> el*3)
+  input.mdmap(el=> el*3)
 );

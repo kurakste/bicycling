@@ -6,20 +6,20 @@ const matrix = require('./matrix');
  * whitespace between letters & three whitespace between 
  * words. 
  */ 
- coder = (input) => {
-    //clear & prepear input
-    const inarr = input
-        .trim()
-        .toLowerCase()
-        .split(' ')
-   //to code letters in morsecode 
-    let out = inarr
-        .map(el => el.split('').map( e => matrix[e]));
+const coder = (input) => {
+  //clear & prepear input
+  const inarr = input
+    .trim()
+    .toLowerCase()
+    .split(' ')
+  //to code letters in morsecode 
+  let out = inarr
+    .map(el => el.split('').map( e => matrix[e]));
     // join array to string
-    out = out
-        .map(el => el.join(' '))
-        .join('   ');
+  out = out
+    .map(el => el.join(' '))
+    .join('   ');
 
-    return out;
+  return out;
 } 
 module.exports = coder;
