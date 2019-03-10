@@ -1,20 +1,20 @@
-const mySingltone = (function (){
+const mySingltone = (() => {
   let instance;
   function init() {
     const privateVariable = 'I\'m rpivaate variable';
     const privateRandomNuber = Math.random();
     return {
-      publicMethod: function() {
+      publicMethod: () => {
         console.log('I\'m a public method');
       },
       publicProperty: 'I\'m a public property!',
-      getRandomNumber: function() {
+      getRandomNumber: () => {
         return privateRandomNuber;
       },
     };
-  };
+  }
   return {
-    getInstance: function() {
+    getInstance: () => {
       if (!instance) instance = init();
       return instance;
     }
