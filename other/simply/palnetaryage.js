@@ -3,7 +3,7 @@
  * returns array of his age on each planet of Solar system
  * in years.
  */
-const getAgeOnEachPlanet = (age) => {
+const getAgeOnEachPlanet = age => {
   const yearEarthMatrix = {
     earth: 1,
     mercury: 0.2408467,
@@ -18,7 +18,7 @@ const getAgeOnEachPlanet = (age) => {
   const year = 365.25*24*60*60; 
   const res = {};
   for (let planet in yearEarthMatrix) {
-    res[planet] = yearEarthMatrix[planet]*(age/year);
+    res[planet] = +(yearEarthMatrix[planet]*(age/year)).toFixed(2);
   }
   return res;
 }
