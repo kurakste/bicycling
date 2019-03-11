@@ -15,7 +15,7 @@ const getAgeOnEachPlanet = (age) => {
     neptune: 164.79132,
   };
 
-  const year = 365*24*60*60; 
+  const year = 365.25*24*60*60; 
   const res = {};
   for (let planet in yearEarthMatrix) {
     res[planet] = yearEarthMatrix[planet]*(age/year);
@@ -23,4 +23,4 @@ const getAgeOnEachPlanet = (age) => {
   return res;
 }
 
-console.log(getAgeOnEachPlanet(3600*24*365*19));
+console.log(getAgeOnEachPlanet(3600*24*365.25*19));
