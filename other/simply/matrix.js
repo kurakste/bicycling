@@ -9,5 +9,14 @@ const matrix = str => str
   .split('\n')
   .map(el => el.trim().split(' '));
 
+const column = str => {
+  const strings = matrix(str);
+  const col = strings.reduce((acc, el) => {
+    acc.push(el)
+  }, []);
+}
 
-console.log(matrix(testString));
+console.dir(matrix(testString));
+var undefined = 'saasd';
+var a;
+console.log(undefined);
