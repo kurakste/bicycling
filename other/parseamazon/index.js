@@ -1,6 +1,27 @@
-const  needle = require('needle');
+const needle = require('needle');
 const cheerio = require('cheerio');
 const data = require('./testCodes');
+
+const cleaner = (input) => {
+  input= input.replace(/\n/g, '');
+  input = input.replace(/\t/g, '');
+  input = input.replace(/\s{2,}/g, '');
+  return input;
+}
+/**
+ * 
+ * @param {*} node  where we search
+ * @param {*} pattern what we will search 
+ */
+const parseProductInfo = (node, pattern) => {
+  let tmp = node.find('tbody');
+  console.log('element: ', tmp.children());
+  // tmp.each((i,e) => {
+  //   console.log('el: ', e.children);
+    
+  // });
+  return '';
+}
 
 const parseAmazonProduct = async (iid = 'B01HVI1C46') => {
   const url = 'https://www.amazon.com/dp/';
@@ -42,19 +63,26 @@ const parseAmazonProduct = async (iid = 'B01HVI1C46') => {
     product.about = about;
     const pd = $('#productDescription');
     let desc = pd.text();
-    desc = desc.replace(/\n/g, '');
-    desc = desc.replace(/\t/g, '');
-    desc = desc.replace(/\s{2,}/g, '');
-    product.description = desc;
+    product.description = cleaner(desc);
     const ppr = $('#priceblock_ourprice');
     let price = ppr.text();
     product.price = price;
     const pav = $('#availability-brief');
     let availability = pav.text();
-    availability= availability.replace(/\n/g, '');
-    availability = availability.replace(/\t/g, '');
-    availability = availability.replace(/\s{2,}/g, '');
-    product.availability = availability;
+    product.availability = cleaner(availability);
+    const tab = $('#productDetails_detailBullets_sections1');
+    console.log('weight: ', parseProductInfo(tab, 'weight'));
+    // let pweight= $('#prodDetails > div.wrapper.USlocale > div.column.col1 > div > div.content.pdClearfix > div > div > table > tbody > tr:nth-child(1) > td.value'); //>tbody>tr:nth-child(1)>td');
+    // if (pweight.text() ==='') {
+    //   pweight = $('#productDetails_detailBullets_sections1 > tbody > tr:nth-child(2) > td');
+    // }
+    // console.log('weight: ', cleaner(pweight.text()));
+    // let psize= $('#prodDetails > div.wrapper.USlocale > div.column.col1 > div > div.content.pdClearfix > div > div > table > tbody > tr:nth-child(2) > td.value');
+    // if (psize.text() === '') {
+    //   psize = $('#productDetails_detailBullets_sections1 > tbody > tr:nth-child(1) > td')
+
+    // }
+    // console.log('siz: ', cleaner(psize.text()));
     return product;
   }
   const data = await getData()  
@@ -70,8 +98,8 @@ const getImages = async (dataarr) => {
   }
   return out;
 }
-
-// parseAmazonProduct('B077GVTVRR') //('B0773LCSF2') ('B07F67GZHY')
-//   .then(data => console.log(data))
-getImages(data)
-  .then(res => console.log(res));
+const sample = ['B077GVTVRR', 'B0773LCSF2','B07F67GZHY'];
+parseAmazonProduct(sample[1]) 
+  .then(data => console.log('')); //(data))
+// getImages(data)
+//   .then(res => console.log(res));
