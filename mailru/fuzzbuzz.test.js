@@ -1,5 +1,4 @@
-let fuzzbuzz = require('./fuzzbuzz');
-
+const fuzzbuzz = require('./fuzzbuzz');
 const fuzz = [3, 6, 9, 12, 13];
 const buzz = [5, 10, 20, 25];
 const fuzzbuzzarr = [15, 30];
